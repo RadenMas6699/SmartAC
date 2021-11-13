@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Smart AC</string>
+    <string name="air_conditioner">Air Conditioner</string>
+    <string name="suhu">Suhu</string>
+</resources>
