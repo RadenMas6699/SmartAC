@@ -2,4 +2,7 @@
     <string name="app_name">Smart AC</string>
     <string name="air_conditioner">Air Conditioner</string>
     <string name="suhu">Suhu</string>
+    <string name="swing">Swing</string>
+    <string name="speed">Kecepatan</string>
+    <string name="profile">Profil</string>
 </resources>

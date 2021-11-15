@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.radenmas.smart_ac">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,15 +17,16 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.RemoteActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Remote" />
         <activity
             android:name=".ui.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.SplashActivity"
             android:exported="true"
-            android:theme="@style/Splash"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

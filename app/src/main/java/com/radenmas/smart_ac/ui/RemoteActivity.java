@@ -1,21 +1,23 @@
 package com.radenmas.smart_ac.ui;
 
-import android.os.Build;
-import android.view.Window;
-import android.view.WindowManager;
+import android.graphics.Color;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.google.android.material.button.MaterialButton;
 import com.radenmas.smart_ac.R;
 import com.radenmas.smart_ac.base.BaseActivity;
 
 public class RemoteActivity extends BaseActivity {
-    TextView tvTemp, tvMode;
-    ImageView imgSpeed, imgMode, minTemp, addTemp;
-    TextView btnSwing, btnMode;
+    TextView tvAcName, tvTemp, tvSwing;
+    ImageView imgPower, imgSpeed, imgSwing, minTemp, addTemp;
+    TextView btnSwing, btnSpeed;
+
+    RelativeLayout rlTemp, rlSwing, rlSpeed;
     int swing = 0;
-    int mode = 0;
+    int speed = 0;
+    int power = 0;
     int temp = 24;
 
     @Override
@@ -25,88 +27,122 @@ public class RemoteActivity extends BaseActivity {
 
     @Override
     protected void myCodeHere() {
+        String acName = getIntent().getExtras().getString("type");
 
-        if (Build.VERSION.SDK_INT >= 21) {
-            Window window = this.getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(this.getResources().getColor(R.color.monitor));
-        }
-
-
+        tvAcName = findViewById(R.id.tvAcName);
+        rlTemp = findViewById(R.id.rlTemp);
+        rlSwing = findViewById(R.id.rlSwing);
+        rlSpeed = findViewById(R.id.rlSpeed);
         tvTemp = findViewById(R.id.tvTemp);
-        tvMode = findViewById(R.id.tvMode);
+        tvSwing = findViewById(R.id.tvSwing);
+        imgPower = findViewById(R.id.imgPower);
         imgSpeed = findViewById(R.id.imgSpeed);
-        imgMode = findViewById(R.id.imgMode);
+        imgSwing = findViewById(R.id.imgSwing);
         minTemp = findViewById(R.id.minTemp);
         addTemp = findViewById(R.id.addTemp);
         btnSwing = findViewById(R.id.btnSwing);
-        btnMode = findViewById(R.id.btnMode);
+        btnSpeed = findViewById(R.id.btnSpeed);
 
+        tvAcName.setText(acName);
         onClick();
 
-        if (temp >= 17 && temp <= 30) {
-
-        }
     }
 
     private void onClick() {
-        btnSwing.setOnClickListener(v -> {
-            swing = swing + 1;
-            switch (swing) {
+        imgPower.setOnClickListener(v -> {
+            power = power + 1;
+            switch (power) {
                 case 1:
-                    imgSpeed.setImageResource(R.drawable.ic_speed_1);
-                    break;
+                    tvTemp.setText("" + temp);
+                    rlTemp.setVisibility(View.VISIBLE);
+                    rlSwing.setVisibility(View.VISIBLE);
+                    rlSpeed.setVisibility(View.VISIBLE);
+                    imgPower.setColorFilter(Color.argb(255, 0, 200, 83));
+                    btnSwing.setClickable(true);
+                    btnSpeed.setClickable(true);
+                    addTemp.setClickable(true);
+                    addTemp.setClickable(true);
 
+                    btnSpeed.setOnClickListener(view -> {
+                        speed = speed + 1;
+                        switch (speed) {
+                            case 1:
+                                imgSpeed.setImageResource(R.drawable.ic_speed_1);
+                                break;
+
+                            case 2:
+                                imgSpeed.setImageResource(R.drawable.ic_speed_2);
+                                break;
+
+                            case 3:
+                                imgSpeed.setImageResource(R.drawable.ic_speed_3);
+                                speed = 0;
+                                break;
+                        }
+                    });
+
+                    btnSwing.setOnClickListener(view -> {
+                        swing = swing + 1;
+                        switch (swing) {
+                            case 1:
+                                imgSwing.setImageResource(R.drawable.ic_swing_down);
+                                tvSwing.setText("Arah Bawah");
+                                break;
+
+                            case 2:
+                                imgSwing.setImageResource(R.drawable.ic_swing_up);
+                                tvSwing.setText("Arah Atas");
+                                break;
+
+                            case 3:
+                                imgSwing.setImageResource(R.drawable.ic_swing_center);
+                                tvSwing.setText("Arah Tengah");
+                                swing = 0;
+                                break;
+                        }
+                    });
+
+                    minTemp.setOnClickListener(view -> {
+                        temp = temp - 1;
+                        tvTemp.setText("" + temp);
+                        if (temp == 16) {
+                            minTemp.setClickable(false);
+                            addTemp.setClickable(true);
+                        } else {
+                            minTemp.setClickable(true);
+                            addTemp.setClickable(true);
+                        }
+                    });
+
+                    addTemp.setOnClickListener(view -> {
+                        temp = temp + 1;
+                        tvTemp.setText("" + temp);
+                        if (temp == 30) {
+                            addTemp.setClickable(false);
+                            minTemp.setClickable(true);
+                        } else {
+                            minTemp.setClickable(true);
+                            addTemp.setClickable(true);
+                        }
+                    });
+
+                    break;
                 case 2:
-                    imgSpeed.setImageResource(R.drawable.ic_speed_2);
-                    break;
-
-                case 3:
-                    imgSpeed.setImageResource(R.drawable.ic_speed_3);
-                    swing = 0;
+                    rlTemp.setVisibility(View.INVISIBLE);
+                    rlSwing.setVisibility(View.INVISIBLE);
+                    rlSpeed.setVisibility(View.INVISIBLE);
+                    imgPower.setColorFilter(Color.argb(255, 222, 222, 222));
+                    power = 0;
+                    btnSwing.setClickable(false);
+                    btnSpeed.setClickable(false);
+                    addTemp.setClickable(false);
+                    addTemp.setClickable(false);
                     break;
             }
         });
+    }
 
-        btnMode.setOnClickListener(v -> {
-            mode = mode + 1;
-            switch (mode) {
-                case 1:
-                    imgMode.setImageResource(R.drawable.ic_speed_1);
-                    tvMode.setText("Arah Atas");
-                    break;
-
-                case 2:
-                    imgMode.setImageResource(R.drawable.ic_speed_2);
-                    tvMode.setText("Arah Tengah");
-                    break;
-
-                case 3:
-                    imgMode.setImageResource(R.drawable.ic_speed_3);
-                    tvMode.setText("Arah Bawah");
-                    mode = 0;
-                    break;
-
-            }
-        });
-
-        minTemp.setOnClickListener(v -> {
-            temp = temp - 1;
-            tvTemp.setText("" + temp);
-            if (temp <= 16) {
-                minTemp.setClickable(false);
-                addTemp.setClickable(true);
-            }
-        });
-
-        addTemp.setOnClickListener(v -> {
-            temp = temp + 1;
-            tvTemp.setText("" + temp);
-            if (temp >= 30) {
-                addTemp.setClickable(false);
-                minTemp.setClickable(true);
-            }
-        });
+    public void Back(View view) {
+        onBackPressed();
     }
 }
