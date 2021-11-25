@@ -1,13 +1,14 @@
 {
   "project_info": {
     "project_number": "315030789664",
+    "firebase_url": "https://smart-ac-75186-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "smart-ac-75186",
     "storage_bucket": "smart-ac-75186.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:315030789664:android:92f7df197e8e9cc3982645",
+        "mobilesdk_app_id": "1:315030789664:android:f9b763f0b0b0cb0e982645",
         "android_client_info": {
           "package_name": "com.radenmas.smart_ac"
         }

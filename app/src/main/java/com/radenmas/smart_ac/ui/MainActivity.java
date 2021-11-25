@@ -20,34 +20,33 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void myCodeHere() {
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("Hello, World!");
-
         imgProfile = findViewById(R.id.imgProfile);
         acCristal = findViewById(R.id.ac_cristal);
         acLG = findViewById(R.id.ac_lg);
         acMidea = findViewById(R.id.ac_midea);
+
+        DatabaseReference dbAC = FirebaseDatabase.getInstance().getReference();
 
         imgProfile.setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, InfoAppActivity.class));
         });
 
         acCristal.setOnClickListener(view -> {
+            dbAC.child("ac_cristal").setValue(1);
             Intent cristal = new Intent(MainActivity.this, RemoteActivity.class);
             cristal.putExtra("type", "Cristal");
             startActivity(cristal);
         });
 
         acLG.setOnClickListener(view -> {
+            dbAC.child("ac_LG").setValue(1);
             Intent lg = new Intent(MainActivity.this, RemoteActivity.class);
             lg.putExtra("type", "LG");
             startActivity(lg);
         });
 
         acMidea.setOnClickListener(view -> {
+            dbAC.child("ac_midea").setValue(1);
             Intent midea = new Intent(MainActivity.this, RemoteActivity.class);
             midea.putExtra("type", "Midea");
             startActivity(midea);

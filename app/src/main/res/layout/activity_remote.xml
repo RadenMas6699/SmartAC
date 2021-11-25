@@ -64,8 +64,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:fontFamily="@font/seven_segment"
-                    android:gravity="center"
-                    android:text="0"
+                    android:gravity="end"
+                    android:minEms="1"
                     android:textColor="@color/primary_text"
                     android:textSize="120sp" />
 
