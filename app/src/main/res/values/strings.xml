@@ -1,11 +1,29 @@
 <resources>
     <string name="app_name">Smart AC</string>
+    <string name="programmer_name">Widi Prasetya Amirullah</string>
+    <string name="hello">Hai, Widi Prasetya</string>
     <string name="air_conditioner">Air Conditioner</string>
     <string name="suhu">Suhu</string>
     <string name="swing">Swing</string>
     <string name="speed">Kecepatan</string>
     <string name="profile">Profil</string>
-    <string name="crystal">Crystal</string>
-    <string name="lg">LG</string>
-    <string name="midea">Midea</string>
+    <string name="ac_crystal">Crystal</string>
+    <string name="ac_lg">LG</string>
+    <string name="ac_midea">Midea</string>
+    <string name="pendingin">\tPendingin</string>
+    <string name="arrow_bottom">Arah Bawah</string>
+    <string name="arrow_top">Arah Atas</string>
+    <string name="arrow_center">Arah Tengah</string>
+    <string name="welcome">Selamat Pagi</string>
+    <string name="pengembang">Pengembang</string>
+    <string name="pembimbing_i">Pembimbing I</string>
+    <string name="pembimbing_ii">Pembimbing II</string>
+    <string name="name_pembimbing_i">Dr. Satria Gunawan Zain, S.Pd., M.T.</string>
+    <string name="name_pembimbing_ii">Zulhajji, S.T., M.T.</string>
+    <string name="prodi_name">Pendidikan Teknik Elektro</string>
+    <string name="major_name">Pendidikan Teknik Elektro</string>
+    <string name="faculty_name">Fakultas Teknik</string>
+    <string name="campus_name">Universitas Negeri Makassar</string>
+    <string name="years">2021</string>
+    <string name="desc">Aplikasi ini dikembangkan oleh Widi Prasetya Amirullah mahasiswa S.1 Pendidikan Teknik Elektro angkatan 2016, dengan bantuan pembimbing bapak Dr. Satria Gunawan Zain, S.Pd., M.T. dan bapak Zulhajji, S.T., M.T. Aplikasi ini bertujuan untuk mengontrol air conditioner dari jarak jauh dengan menggunakan bantuan smartphone.</string>
 </resources>

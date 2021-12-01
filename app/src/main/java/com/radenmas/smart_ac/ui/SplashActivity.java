@@ -26,11 +26,11 @@ public class SplashActivity extends BaseActivity {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-
         tvVersionApp.setText("Versi " + info.versionName);
+
         new Handler().postDelayed(() -> {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
-        }, 3500);
+        }, 1500);
     }
 }

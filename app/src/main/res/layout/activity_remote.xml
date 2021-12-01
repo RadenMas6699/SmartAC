@@ -88,11 +88,11 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="18dp"
                     android:layout_toEndOf="@id/tvTemp"
-                    android:drawableTint="@color/primary_text"
-                    android:text=" Pendingin"
+                    android:text="@string/pendingin"
                     android:textColor="@color/primary_text"
                     android:textSize="16sp"
-                    app:drawableStartCompat="@drawable/ic_ac_unit" />
+                    app:drawableStartCompat="@drawable/ic_ac_unit"
+                    app:drawableTint="@color/primary_text" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -117,7 +117,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:layout_toEndOf="@id/imgSpeed"
-                    android:text="Kecepatan"
+                    android:text="@string/speed"
                     android:textColor="@color/primary_text" />
             </RelativeLayout>
 
@@ -144,7 +144,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:layout_toEndOf="@id/imgSwing"
-                    android:text="Arah Bawah"
+                    android:text="@string/arrow_bottom"
                     android:textColor="@color/primary_text" />
             </RelativeLayout>
         </RelativeLayout>

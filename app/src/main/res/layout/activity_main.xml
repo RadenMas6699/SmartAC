@@ -16,14 +16,26 @@
             android:layout_marginEnd="16dp">
 
             <TextView
+                android:id="@+id/tvTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/poppins"
-                android:text="Hai, Widi"
                 android:textColor="@color/secondary_text"
-                android:textSize="18sp"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTime"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/hello"
+                android:textColor="@color/secondary_text"
+                android:textSize="17sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -32,7 +44,7 @@
                 android:layout_height="46dp"
                 android:layout_alignParentEnd="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_mas" />
+                android:src="@drawable/img_widi" />
         </RelativeLayout>
     </com.google.android.material.appbar.MaterialToolbar>
 
@@ -168,7 +180,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="16dp"
-                            android:text="@string/crystal"
+                            android:text="@string/ac_crystal"
                             android:textColor="@color/primary_text"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -192,7 +204,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="16dp"
-                            android:text="@string/lg"
+                            android:text="@string/ac_lg"
                             android:textColor="@color/primary_text"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -216,7 +228,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="16dp"
-                            android:text="@string/midea"
+                            android:text="@string/ac_midea"
                             android:textColor="@color/primary_text"
                             android:textSize="16sp" />
                     </LinearLayout>

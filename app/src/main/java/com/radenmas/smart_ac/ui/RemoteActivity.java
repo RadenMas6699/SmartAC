@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -136,19 +135,19 @@ public class RemoteActivity extends BaseActivity {
                 case 1:
                     dbReff.child("Swing").setValue(1);
                     imgSwing.setImageResource(R.drawable.ic_swing_down);
-                    tvSwing.setText("Arah Bawah");
+                    tvSwing.setText(getResources().getString(R.string.arrow_bottom));
                     break;
 
                 case 2:
                     dbReff.child("Swing").setValue(2);
                     imgSwing.setImageResource(R.drawable.ic_swing_up);
-                    tvSwing.setText("Arah Atas");
+                    tvSwing.setText(getResources().getString(R.string.arrow_top));
                     break;
 
                 case 3:
                     dbReff.child("Swing").setValue(3);
                     imgSwing.setImageResource(R.drawable.ic_swing_center);
-                    tvSwing.setText("Arah Tengah");
+                    tvSwing.setText(getResources().getString(R.string.arrow_center));
                     swing = 0;
                     break;
             }
@@ -199,5 +198,10 @@ public class RemoteActivity extends BaseActivity {
         dbReff.child("ac_cristal").setValue(0);
         dbReff.child("ac_LG").setValue(0);
         dbReff.child("ac_midea").setValue(0);
+        dbReff.child("Power").setValue(0);
+        dbReff.child("Suhu").setValue(24);
+        dbReff.child("Kelembaban").setValue(0);
+        dbReff.child("Swing").setValue(0);
+        dbReff.child("Speed").setValue(0);
     }
 }

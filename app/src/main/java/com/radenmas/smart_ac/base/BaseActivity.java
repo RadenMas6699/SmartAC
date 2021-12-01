@@ -3,7 +3,6 @@ package com.radenmas.smart_ac.base;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,13 +20,5 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayoutResource());
 
         myCodeHere();
-    }
-
-    protected void toastS(String message) {
-        Toast.makeText(getApplicationContext(), "" + message, Toast.LENGTH_SHORT).show();
-    }
-
-    protected void toastL(String message) {
-        Toast.makeText(getApplicationContext(), "" + message, Toast.LENGTH_LONG).show();
     }
 }
