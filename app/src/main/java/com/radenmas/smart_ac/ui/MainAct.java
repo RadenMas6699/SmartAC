@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class MainActivity extends BaseActivity {
+public class MainAct extends BaseActivity {
     private TextView tvTime, tvCalender;
     private ImageView imgProfile;
     private LinearLayout acCristal, acLG, acMidea;
@@ -23,9 +23,11 @@ public class MainActivity extends BaseActivity {
     private SimpleDateFormat dateFormat;
     private String date;
 
+    int back = 0;
+
     @Override
     protected int getLayoutResource() {
-        return R.layout.activity_main;
+        return R.layout.act_main;
     }
 
     @Override
@@ -40,18 +42,18 @@ public class MainActivity extends BaseActivity {
         DatabaseReference dbAC = FirebaseDatabase.getInstance().getReference();
 
         imgProfile.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, InfoAppActivity.class));
+            startActivity(new Intent(MainAct.this, InfoAppAct.class));
         });
 
         Date dt = new Date();
         int hours = dt.getHours();
         if (hours >= 1 && hours <= 11) {
             tvTime.setText("Selamat Pagi");
-        } else if (hours >= 11 && hours <= 15) {
+        } else if (hours > 11 && hours <= 15) {
             tvTime.setText("Selamat Siang");
-        } else if (hours >= 15 && hours <= 18) {
+        } else if (hours > 15 && hours <= 18) {
             tvTime.setText("Selamat Sore");
-        } else if (hours >= 18 && hours <= 24) {
+        } else if (hours > 18 && hours <= 24) {
             tvTime.setText("Selamat Malam");
         }
 
@@ -62,24 +64,34 @@ public class MainActivity extends BaseActivity {
 
         acCristal.setOnClickListener(view -> {
             dbAC.child("ac_cristal").setValue(1);
-            Intent cristal = new Intent(MainActivity.this, RemoteActivity.class);
+            Intent cristal = new Intent(MainAct.this, RemoteAct.class);
             cristal.putExtra("type", getResources().getString(R.string.ac_crystal));
             startActivity(cristal);
         });
 
         acLG.setOnClickListener(view -> {
             dbAC.child("ac_LG").setValue(1);
-            Intent lg = new Intent(MainActivity.this, RemoteActivity.class);
+            Intent lg = new Intent(MainAct.this, RemoteAct.class);
             lg.putExtra("type", getResources().getString(R.string.ac_lg));
             startActivity(lg);
         });
 
         acMidea.setOnClickListener(view -> {
             dbAC.child("ac_midea").setValue(1);
-            Intent midea = new Intent(MainActivity.this, RemoteActivity.class);
+            Intent midea = new Intent(MainAct.this, RemoteAct.class);
             midea.putExtra("type", getResources().getString(R.string.ac_midea));
             startActivity(midea);
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        back++;
+        if (back == 1) {
+            toastS("Tekan sekali lagi untuk keluar");
+        } else {
+            super.onBackPressed();
+        }
 
     }
 }

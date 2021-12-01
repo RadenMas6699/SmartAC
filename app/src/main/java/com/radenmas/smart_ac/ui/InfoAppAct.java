@@ -8,11 +8,11 @@ import android.widget.TextView;
 import com.radenmas.smart_ac.R;
 import com.radenmas.smart_ac.base.BaseActivity;
 
-public class InfoAppActivity extends BaseActivity {
+public class InfoAppAct extends BaseActivity {
 
     @Override
     protected int getLayoutResource() {
-        return R.layout.activity_info_app;
+        return R.layout.act_info_app;
     }
 
     @Override

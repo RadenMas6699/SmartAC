@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/monitor"
     android:orientation="vertical"
-    tools:context=".ui.RemoteActivity">
+    tools:context=".ui.RemoteAct">
 
     <RelativeLayout
         android:layout_width="match_parent"

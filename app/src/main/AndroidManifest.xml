@@ -13,17 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartAC">
         <activity
-            android:name=".ui.InfoAppActivity"
+            android:name=".ui.InfoAppAct"
+            android:theme="@style/Info"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.RemoteActivity"
+            android:name=".ui.RemoteAct"
             android:screenOrientation="portrait"
             android:theme="@style/Remote" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.MainAct"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".ui.SplashAct"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Splash">

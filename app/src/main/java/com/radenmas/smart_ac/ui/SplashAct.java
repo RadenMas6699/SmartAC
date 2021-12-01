@@ -9,11 +9,11 @@ import android.widget.TextView;
 import com.radenmas.smart_ac.R;
 import com.radenmas.smart_ac.base.BaseActivity;
 
-public class SplashActivity extends BaseActivity {
+public class SplashAct extends BaseActivity {
 
     @Override
     protected int getLayoutResource() {
-        return R.layout.activity_splash;
+        return R.layout.act_splash;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class SplashActivity extends BaseActivity {
         tvVersionApp.setText("Versi " + info.versionName);
 
         new Handler().postDelayed(() -> {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            startActivity(new Intent(SplashAct.this, MainAct.class));
             finish();
         }, 1500);
     }

@@ -16,7 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.radenmas.smart_ac.R;
 import com.radenmas.smart_ac.base.BaseActivity;
 
-public class RemoteActivity extends BaseActivity {
+public class RemoteAct extends BaseActivity {
     private TextView tvAcName, tvTemp, tvSwing;
     private ImageView imgPower, imgSpeed, imgSwing, minTemp, addTemp;
     private TextView btnSwing, btnSpeed;
@@ -29,7 +29,7 @@ public class RemoteActivity extends BaseActivity {
 
     @Override
     protected int getLayoutResource() {
-        return R.layout.activity_remote;
+        return R.layout.act_remote;
     }
 
     @Override
@@ -195,6 +195,11 @@ public class RemoteActivity extends BaseActivity {
 
     public void Back(View view) {
         onBackPressed();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
         dbReff.child("ac_cristal").setValue(0);
         dbReff.child("ac_LG").setValue(0);
         dbReff.child("ac_midea").setValue(0);

@@ -21,4 +21,8 @@
     <style name="Remote" parent="Theme.SmartAC">
         <item name="android:statusBarColor" tools:targetApi="l">@color/monitor</item>
     </style>
+
+    <style name="Info" parent="Theme.SmartAC">
+        <item name="android:statusBarColor" tools:targetApi="l">@color/accent</item>
+    </style>
 </resources>
