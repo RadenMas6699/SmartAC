@@ -1,6 +1,7 @@
 package com.radenmas.smart_ac.ui;
 
 import android.graphics.Color;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -53,7 +54,7 @@ public class RemoteAct extends BaseActivity {
         btnSpeed = findViewById(R.id.btnSpeed);
 
         tvAcName.setText(acName);
-        getData();
+//        getData();
         onClick();
     }
 
@@ -86,18 +87,20 @@ public class RemoteAct extends BaseActivity {
             power = power + 1;
             switch (power) {
                 case 1:
-                    On();
+                    Off();
                     break;
                 case 2:
-                    Off();
+                    On();
                     break;
             }
         });
     }
 
     public void On() {
-        dbReff.child("Power").setValue(1);
+        dbReff.child("Power").setValue(2);
+        new Handler().postDelayed(() -> dbReff.child("Power").setValue(0),1000);
 
+        power = 0;
         tvTemp.setText("" + temp);
         rlTemp.setVisibility(View.VISIBLE);
         rlSwing.setVisibility(View.VISIBLE);
@@ -113,16 +116,19 @@ public class RemoteAct extends BaseActivity {
             switch (speed) {
                 case 1:
                     dbReff.child("Speed").setValue(1);
+                    new Handler().postDelayed(() -> dbReff.child("Speed").setValue(0),1000);
                     imgSpeed.setImageResource(R.drawable.ic_speed_1);
                     break;
 
                 case 2:
-                    dbReff.child("Speed").setValue(2);
+                    dbReff.child("Speed").setValue(1);
+                    new Handler().postDelayed(() -> dbReff.child("Speed").setValue(0),1000);
                     imgSpeed.setImageResource(R.drawable.ic_speed_2);
                     break;
 
                 case 3:
-                    dbReff.child("Speed").setValue(3);
+                    dbReff.child("Speed").setValue(1);
+                    new Handler().postDelayed(() -> dbReff.child("Speed").setValue(0),1000);
                     imgSpeed.setImageResource(R.drawable.ic_speed_3);
                     speed = 0;
                     break;
@@ -134,18 +140,21 @@ public class RemoteAct extends BaseActivity {
             switch (swing) {
                 case 1:
                     dbReff.child("Swing").setValue(1);
+                    new Handler().postDelayed(() -> dbReff.child("Swing").setValue(0),1000);
                     imgSwing.setImageResource(R.drawable.ic_swing_down);
                     tvSwing.setText(getResources().getString(R.string.arrow_bottom));
                     break;
 
                 case 2:
-                    dbReff.child("Swing").setValue(2);
+                    dbReff.child("Swing").setValue(1);
+                    new Handler().postDelayed(() -> dbReff.child("Swing").setValue(0),1000);
                     imgSwing.setImageResource(R.drawable.ic_swing_up);
                     tvSwing.setText(getResources().getString(R.string.arrow_top));
                     break;
 
                 case 3:
-                    dbReff.child("Swing").setValue(3);
+                    dbReff.child("Swing").setValue(1);
+                    new Handler().postDelayed(() -> dbReff.child("Swing").setValue(0),1000);
                     imgSwing.setImageResource(R.drawable.ic_swing_center);
                     tvSwing.setText(getResources().getString(R.string.arrow_center));
                     swing = 0;
@@ -164,6 +173,7 @@ public class RemoteAct extends BaseActivity {
                 addTemp.setClickable(true);
             }
             dbReff.child("Suhu").setValue(temp);
+            new Handler().postDelayed(() -> dbReff.child("Suhu").setValue(0),1000);
         });
 
         addTemp.setOnClickListener(view -> {
@@ -177,16 +187,17 @@ public class RemoteAct extends BaseActivity {
                 addTemp.setClickable(true);
             }
             dbReff.child("Suhu").setValue(temp);
+            new Handler().postDelayed(() -> dbReff.child("Suhu").setValue(0),1000);
         });
     }
 
     public void Off() {
-        dbReff.child("Power").setValue(0);
+        dbReff.child("Power").setValue(1);
+        new Handler().postDelayed(() -> dbReff.child("Power").setValue(0),1000);
         rlTemp.setVisibility(View.INVISIBLE);
         rlSwing.setVisibility(View.INVISIBLE);
         rlSpeed.setVisibility(View.INVISIBLE);
         imgPower.setColorFilter(Color.argb(255, 222, 222, 222));
-        power = 0;
         btnSwing.setClickable(false);
         btnSpeed.setClickable(false);
         addTemp.setClickable(false);
@@ -203,10 +214,5 @@ public class RemoteAct extends BaseActivity {
         dbReff.child("ac_cristal").setValue(0);
         dbReff.child("ac_LG").setValue(0);
         dbReff.child("ac_midea").setValue(0);
-        dbReff.child("Power").setValue(0);
-        dbReff.child("Suhu").setValue(24);
-        dbReff.child("Kelembaban").setValue(0);
-        dbReff.child("Swing").setValue(0);
-        dbReff.child("Speed").setValue(0);
     }
 }
