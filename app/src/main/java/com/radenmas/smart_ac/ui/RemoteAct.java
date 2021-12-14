@@ -54,32 +54,7 @@ public class RemoteAct extends BaseActivity {
         btnSpeed = findViewById(R.id.btnSpeed);
 
         tvAcName.setText(acName);
-        getData();
         onClick();
-    }
-
-    private void getData() {
-        dbReff.child("Power").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String state = snapshot.getValue().toString();
-                switch (state) {
-                    case "0":
-                        power = 2;
-                        Off();
-                        break;
-                    case "1":
-                        power = 1;
-                        On();
-                        break;
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
     }
 
     private void onClick() {
