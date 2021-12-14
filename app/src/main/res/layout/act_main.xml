@@ -42,8 +42,8 @@
 
             <ImageView
                 android:id="@+id/imgProfile"
-                android:layout_width="46dp"
-                android:layout_height="46dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_alignParentEnd="true"
                 android:scaleType="fitXY"
                 android:src="@drawable/img_widi" />
@@ -129,7 +129,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:fontFamily="@font/poppins"
-                            android:text="3"
+                            android:text="2"
                             android:textColor="@color/white"
                             android:textSize="38sp"
                             android:textStyle="bold" />
@@ -165,7 +165,7 @@
                     <LinearLayout
                         android:id="@+id/ac_cristal"
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
+                        android:layout_height="90dp"
                         android:foreground="?attr/selectableItemBackground"
                         android:orientation="horizontal"
                         android:paddingHorizontal="32dp">
@@ -181,7 +181,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="16dp"
-                            android:text="@string/ac_crystal"
+                            android:fontFamily="@font/poppins"
+                            android:text="@string/ac_samsung"
                             android:textColor="@color/primary_text"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -189,7 +190,7 @@
                     <LinearLayout
                         android:id="@+id/ac_lg"
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
+                        android:layout_height="90dp"
                         android:foreground="?attr/selectableItemBackground"
                         android:orientation="horizontal"
                         android:paddingHorizontal="32dp">
@@ -205,31 +206,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="16dp"
+                            android:fontFamily="@font/poppins"
                             android:text="@string/ac_lg"
-                            android:textColor="@color/primary_text"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/ac_midea"
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:foreground="?attr/selectableItemBackground"
-                        android:orientation="horizontal"
-                        android:paddingHorizontal="32dp">
-
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_air_conditioner"
-                            app:tint="@color/secondary_text" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="16dp"
-                            android:text="@string/ac_midea"
                             android:textColor="@color/primary_text"
                             android:textSize="16sp" />
                     </LinearLayout>

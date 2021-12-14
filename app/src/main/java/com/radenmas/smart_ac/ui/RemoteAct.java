@@ -54,7 +54,7 @@ public class RemoteAct extends BaseActivity {
         btnSpeed = findViewById(R.id.btnSpeed);
 
         tvAcName.setText(acName);
-//        getData();
+        getData();
         onClick();
     }
 

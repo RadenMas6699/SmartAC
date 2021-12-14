@@ -93,6 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                android:fontFamily="@font/poppins"
                 android:gravity="center"
                 android:text="@string/pengembang" />
         </LinearLayout>
@@ -113,6 +114,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins"
                     android:gravity="center"
                     android:text="@string/app_name"
                     android:textColor="@color/primary_text"
@@ -124,6 +126,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins"
                     android:gravity="center"
                     android:textSize="14sp" />
 
@@ -131,6 +134,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
+                    android:fontFamily="@font/poppins"
                     android:gravity="center"
                     android:text="@string/name_pembimbing_i"
                     android:textColor="@color/primary_text"
@@ -140,6 +144,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
                     android:gravity="center"
                     android:text="@string/pembimbing_i" />
 
@@ -147,6 +152,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins"
                     android:gravity="center"
                     android:text="@string/name_pembimbing_ii"
                     android:textColor="@color/primary_text"
@@ -156,6 +162,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
                     android:gravity="center"
                     android:text="@string/pembimbing_ii" />
 
@@ -163,6 +170,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
+                    android:fontFamily="@font/poppins"
                     android:gravity="center"
                     android:text="@string/prodi_name"
                     android:textColor="@color/primary_text"
@@ -172,6 +180,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins"
                     android:gravity="center"
                     android:text="@string/major_name"
                     android:textColor="@color/primary_text"
@@ -181,6 +190,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins"
                     android:gravity="center"
                     android:text="@string/faculty_name"
                     android:textColor="@color/primary_text"
@@ -190,6 +200,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins"
                     android:gravity="center"
                     android:text="@string/campus_name"
                     android:textColor="@color/primary_text"
@@ -199,6 +210,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins"
                     android:gravity="center"
                     android:text="@string/years"
                     android:textColor="@color/primary_text"
@@ -211,6 +223,7 @@
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginBottom="62dp"
+                    android:fontFamily="@font/poppins"
                     android:justificationMode="inter_word"
                     android:text="@string/desc" />
 

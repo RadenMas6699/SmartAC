@@ -88,6 +88,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="18dp"
                     android:layout_toEndOf="@id/tvTemp"
+                    android:fontFamily="@font/poppins"
                     android:text="@string/pendingin"
                     android:textColor="@color/primary_text"
                     android:textSize="16sp"
@@ -117,6 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:layout_toEndOf="@id/imgSpeed"
+                    android:fontFamily="@font/poppins"
                     android:text="@string/speed"
                     android:textColor="@color/primary_text" />
             </RelativeLayout>
@@ -144,6 +146,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:layout_toEndOf="@id/imgSwing"
+                    android:fontFamily="@font/poppins"
                     android:text="@string/arrow_bottom"
                     android:textColor="@color/primary_text" />
             </RelativeLayout>
@@ -233,6 +236,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:fontFamily="@font/poppins"
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
                 android:text="@string/speed"
@@ -244,6 +248,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:fontFamily="@font/poppins"
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
                 android:text="@string/swing"

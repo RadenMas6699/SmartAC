@@ -17,7 +17,7 @@ import java.util.Date;
 public class MainAct extends BaseActivity {
     private TextView tvTime, tvCalender;
     private ImageView imgProfile;
-    private LinearLayout acCristal, acLG, acMidea;
+    private LinearLayout acCristal, acLG;
 
     private Calendar calendar;
     private SimpleDateFormat dateFormat;
@@ -37,7 +37,6 @@ public class MainAct extends BaseActivity {
         imgProfile = findViewById(R.id.imgProfile);
         acCristal = findViewById(R.id.ac_cristal);
         acLG = findViewById(R.id.ac_lg);
-        acMidea = findViewById(R.id.ac_midea);
 
         DatabaseReference dbAC = FirebaseDatabase.getInstance().getReference();
 
@@ -65,7 +64,7 @@ public class MainAct extends BaseActivity {
         acCristal.setOnClickListener(view -> {
             dbAC.child("ac_cristal").setValue(1);
             Intent cristal = new Intent(MainAct.this, RemoteAct.class);
-            cristal.putExtra("type", getResources().getString(R.string.ac_crystal));
+            cristal.putExtra("type", getResources().getString(R.string.ac_samsung));
             startActivity(cristal);
         });
 
@@ -75,20 +74,13 @@ public class MainAct extends BaseActivity {
             lg.putExtra("type", getResources().getString(R.string.ac_lg));
             startActivity(lg);
         });
-
-        acMidea.setOnClickListener(view -> {
-            dbAC.child("ac_midea").setValue(1);
-            Intent midea = new Intent(MainAct.this, RemoteAct.class);
-            midea.putExtra("type", getResources().getString(R.string.ac_midea));
-            startActivity(midea);
-        });
     }
 
     @Override
     public void onBackPressed() {
         back++;
         if (back == 1) {
-            toastS("Tekan sekali lagi untuk keluar");
+            toastS("Tekan sekali lagi untuk keluar.");
         } else {
             super.onBackPressed();
         }
