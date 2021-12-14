@@ -17,7 +17,7 @@ import java.util.Date;
 public class MainAct extends BaseActivity {
     private TextView tvTime, tvCalender;
     private ImageView imgProfile;
-    private LinearLayout acCristal, acLG;
+    private LinearLayout acSamsung, acLG;
 
     private Calendar calendar;
     private SimpleDateFormat dateFormat;
@@ -35,7 +35,7 @@ public class MainAct extends BaseActivity {
         tvTime = findViewById(R.id.tvTime);
         tvCalender = findViewById(R.id.tvCalender);
         imgProfile = findViewById(R.id.imgProfile);
-        acCristal = findViewById(R.id.ac_cristal);
+        acSamsung = findViewById(R.id.ac_samsung);
         acLG = findViewById(R.id.ac_lg);
 
         DatabaseReference dbAC = FirebaseDatabase.getInstance().getReference();
@@ -61,8 +61,8 @@ public class MainAct extends BaseActivity {
         date = dateFormat.format(calendar.getTime());
         tvCalender.setText(date);
 
-        acCristal.setOnClickListener(view -> {
-            dbAC.child("ac_cristal").setValue(1);
+        acSamsung.setOnClickListener(view -> {
+            dbAC.child("ac_samsung").setValue(1);
             Intent cristal = new Intent(MainAct.this, RemoteAct.class);
             cristal.putExtra("type", getResources().getString(R.string.ac_samsung));
             startActivity(cristal);

@@ -211,7 +211,7 @@ public class RemoteAct extends BaseActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        dbReff.child("ac_cristal").setValue(0);
+        dbReff.child("ac_samsung").setValue(0);
         dbReff.child("ac_LG").setValue(0);
         dbReff.child("ac_midea").setValue(0);
     }
